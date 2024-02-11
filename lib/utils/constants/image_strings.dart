@@ -15,4 +15,7 @@ class TImage{
   static const String onBoardingImage2="assets/images/on_boarding_images/payment.gif";
   static const String onBoardingImage3="assets/images/on_boarding_images/delivary.gif";
 
+
+  static const String productsIllustration="assets/images/animation/delivary.gif";
+
 }
