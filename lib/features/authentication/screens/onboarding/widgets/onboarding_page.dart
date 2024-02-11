@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 import '../../../../../utils/constants/sizes.dart';
 import '../../../../../utils/helpers/helper_functions.dart';
@@ -16,14 +17,14 @@ class OnBoardingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:const EdgeInsets.all(TSizes.defaultSpace),
+      padding: const EdgeInsets.all(TSizes.defaultSpace),
       child: Column(
         children: [
-          Image(
+          Lottie.asset(
+            image,
             width: THelperFunctions.screenWidth() * 0.8,
             height: THelperFunctions.screenHeight() * 0.6,
             fit: BoxFit.contain,
-            image: AssetImage(image),
           ),
           Text(
             title,
@@ -43,4 +44,3 @@ class OnBoardingPage extends StatelessWidget {
     );
   }
 }
-

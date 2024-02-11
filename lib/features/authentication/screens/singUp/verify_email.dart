@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 import 'package:new_ecommerce_app/common/widgets/success_screens/success_screen.dart';
 import 'package:new_ecommerce_app/features/authentication/screens/login/login.dart';
 import 'package:new_ecommerce_app/utils/constants/image_strings.dart';
@@ -31,10 +32,8 @@ class VerifyEmailScreen extends StatelessWidget {
           child: Column(
             children: [
               /// Image
-              Image(
-                image: const AssetImage(
-                  TImage.productsIllustration,
-                ),
+              Lottie.asset(
+                TImage.productsIllustration,
                 width: THelperFunctions.screenWidth() * 0.6,
               ),
               const SizedBox(

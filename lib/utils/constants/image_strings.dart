@@ -11,11 +11,11 @@ class TImage{
   static const String facebook="assets/logos/facebook.png";
 
   // -- OnBoarding Images
-  static const String onBoardingImage1="assets/images/on_boarding_images/product_search.gif";
-  static const String onBoardingImage2="assets/images/on_boarding_images/payment.gif";
-  static const String onBoardingImage3="assets/images/on_boarding_images/delivary.gif";
+  static const String onBoardingImage1="assets/images/on_boarding_images/payment.json";
+  static const String onBoardingImage2="assets/images/on_boarding_images/explore.json";
+  static const String onBoardingImage3="assets/images/on_boarding_images/delivery.json";
 
 
-  static const String productsIllustration="assets/images/animation/delivary.gif";
+  static const String productsIllustration="assets/images/animation/explore.json";
 
 }

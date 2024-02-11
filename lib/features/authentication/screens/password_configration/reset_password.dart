@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 import 'package:new_ecommerce_app/utils/constants/image_strings.dart';
 import 'package:new_ecommerce_app/utils/constants/text_strings.dart';
 
@@ -27,10 +28,10 @@ class ResetPassword extends StatelessWidget {
           child: Column(
             children: [
               /// Image
-              Image(
-                image:const AssetImage(
-                    TImage.productsIllustration
-                ),
+              Lottie.asset(
+
+                    TImage.productsIllustration,
+
                 width: THelperFunctions.screenWidth() * 0.6,
               ),
               const SizedBox(
