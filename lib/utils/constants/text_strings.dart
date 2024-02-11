@@ -29,6 +29,8 @@ class TTexts{
   static const String orSingUpWith ="or sing up with";
   static const String iAgreeTo ="I agree to";
   static const String and ="and";
+  static const String done ="Done";
+  static const String submit ="Submit";
   static const String privacyPolicy ="Privacy Policy";
   static const String termsOfUse ="Terms Of Use";
   static const String verificationCode ="Verification Code";
