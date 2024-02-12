@@ -15,7 +15,11 @@ class TImage{
   static const String onBoardingImage2="assets/images/on_boarding_images/explore.json";
   static const String onBoardingImage3="assets/images/on_boarding_images/delivery.json";
 
-
+  // -- Animation
   static const String productsIllustration="assets/images/animation/explore.json";
+
+  // -- Category Icons
+  static const String shoeIcon="assets/icons/categories/shoe.png";
+  static const String clotheIcon="assets/icons/categories/clothe.png";
 
 }
