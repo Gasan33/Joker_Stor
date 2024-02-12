@@ -21,6 +21,7 @@ dependencies:
   flutter_native_splash: ^2.3.2
   smooth_page_indicator: ^1.1.0
   lottie: ^2.6.0
+  carousel_slider: ^4.2.1
 
   #icons
   iconsax: ^0.0.8
@@ -52,6 +53,7 @@ flutter:
     - assets/icons/
     - assets/images/on_boarding_images/
     - assets/images/animation/
+    - assets/images/banners/
     - assets/icons/categories/
 
   #---------------- LOCAL FONTS -------------#

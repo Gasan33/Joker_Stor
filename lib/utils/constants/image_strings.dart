@@ -22,4 +22,9 @@ class TImage{
   static const String shoeIcon="assets/icons/categories/shoe.png";
   static const String clotheIcon="assets/icons/categories/clothe.png";
 
+  // -- Banners
+  static const String promoBanner1="assets/images/banners/nike.png";
+  static const String promoBanner2="assets/images/banners/addidas.jpg";
+  static const String promoBanner3="assets/images/banners/puma.jpg";
+
 }
