@@ -6,6 +6,8 @@ import 'package:new_ecommerce_app/utils/constants/image_strings.dart';
 import 'package:new_ecommerce_app/utils/constants/sizes.dart';
 import '../../../../common/widgets/custom_shapes/containers/primary_header_container.dart';
 import '../../../../common/widgets/custom_shapes/containers/search_container.dart';
+import '../../../../common/widgets/layouts/grid_layout.dart';
+import '../../../../common/widgets/products/product_cards/product_card_vertical.dart';
 import '../../../../common/widgets/texts/section_header.dart';
 import '../../../../utils/constants/colors.dart';
 
@@ -14,12 +16,12 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return  Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
             /// Header
-            TPrimaryHeaderContainer(
+            const TPrimaryHeaderContainer(
               child: Column(
                 children: [
                   /// -- AppBar
@@ -62,12 +64,27 @@ class HomeScreen extends StatelessWidget {
 
             /// Body
             Padding(
-              padding: EdgeInsets.all(TSizes.defaultSpace),
-              child: TPromoSlider(
-                banners: [
-                  TImage.promoBanner1,
-                  TImage.promoBanner2,
-                  TImage.promoBanner3,
+              padding: const EdgeInsets.all(TSizes.defaultSpace),
+              child: Column(
+                children: [
+                  /// -- Promo Slider
+                  const TPromoSlider(
+                    banners: [
+                      TImage.promoBanner1,
+                      TImage.promoBanner2,
+                      TImage.promoBanner3,
+                    ],
+                  ),
+                  const SizedBox(
+                    height: TSizes.spaceBtwSections,
+                  ),
+
+                  /// -- Popular Products
+                  TGridLayout(
+                    itemCount: 4,
+                    itemBuilder:(_,index)=> const TProductCardVertical() ,
+                  ),
+
                 ],
               ),
             ),
@@ -77,4 +94,5 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+
 

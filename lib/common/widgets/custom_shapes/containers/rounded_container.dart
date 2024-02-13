@@ -1,37 +1,43 @@
 import 'package:flutter/material.dart';
+import 'package:new_ecommerce_app/utils/constants/sizes.dart';
 
 import '../../../../utils/constants/colors.dart';
 
-class TCircularContainer extends StatelessWidget {
-  const TCircularContainer({
+class TRoundedContainer extends StatelessWidget {
+  const TRoundedContainer({
     super.key,
-    this.width =  400,
-    this.height = 400,
-    this.radius = 400,
-    this.padding = 0,
+    this.width,
+    this.height,
+    this.radius = TSizes.cardRadiusLg,
+    this.padding,
     this.child,
     this.backgroundColor = TColors.white,
-    this.margin ,
+    this.margin,
+     this.showBorder=false,
+     this.borderColor=TColors.borderPrimary,
   });
 
   final double? width;
   final double? height;
   final double radius;
-  final double padding;
-  final EdgeInsets? margin;
   final Widget? child;
+  final bool showBorder;
+  final Color borderColor;
   final Color backgroundColor;
+  final EdgeInsets? padding;
+  final EdgeInsets? margin;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: width,
       height: height,
-      padding: EdgeInsets.all(padding),
+      padding: padding,
       margin: margin,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(radius),
         color: backgroundColor,
+        border: showBorder?Border.all(color: borderColor):null,
       ),
       child: child,
     );

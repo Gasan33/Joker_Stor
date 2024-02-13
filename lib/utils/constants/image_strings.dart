@@ -27,4 +27,11 @@ class TImage{
   static const String promoBanner2="assets/images/banners/addidas.jpg";
   static const String promoBanner3="assets/images/banners/puma.jpg";
 
+  // -- Products
+  static const String productImage1="assets/images/products/nike1.jpg";
+  static const String productImage2="assets/images/products/nike2.jpg";
+  static const String productImage3="assets/images/products/nike3.jpg";
+  static const String productImage4="assets/images/products/nike4.jpg";
+  static const String productImage5="assets/images/products/nike5.jpg";
+
 }
