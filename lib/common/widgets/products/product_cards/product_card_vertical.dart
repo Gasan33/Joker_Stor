@@ -36,7 +36,6 @@ class TProductCardVertical extends StatelessWidget {
             /// Thumbnail WishList Button Discount Tag
             TRoundedContainer(
               height: 180,
-              //width: double.infinity,
               padding: const EdgeInsets.all(TSizes.sm),
               backgroundColor: dark ? TColors.dark : TColors.light,
               child: Stack(
@@ -78,24 +77,26 @@ class TProductCardVertical extends StatelessWidget {
               ),
             ),
 
-
             ///  -- Details
             const Padding(
               padding: EdgeInsets.only(left: TSizes.sm),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  TProductTitleText(
-                    title: 'Green Nike Air Shoes',
-                    smallSize: true,
-                  ),
-                  SizedBox(
-                    height: TSizes.spaceBtwItems / 2,
-                  ),
-                  TBrandTitleTextWithVerifiedIcon(title: 'Nike'),
+              child: SizedBox(
+                width: double.infinity,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    TProductTitleText(
+                      title: 'Green Nike Air Shoes',
+                      smallSize: true,
+                    ),
+                    SizedBox(
+                      height: TSizes.spaceBtwItems / 2,
+                    ),
+                    TBrandTitleTextWithVerifiedIcon(title: 'Nike'),
 
 
-                ],
+                  ],
+                ),
               ),
             ),
             const Spacer(),

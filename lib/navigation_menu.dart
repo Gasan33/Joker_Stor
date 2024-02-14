@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:new_ecommerce_app/features/shop/screens/home/home.dart';
 import 'package:new_ecommerce_app/features/shop/screens/store/store.dart';
+import 'package:new_ecommerce_app/features/shop/screens/wishlist/wishlist.dart';
 import 'package:new_ecommerce_app/utils/constants/colors.dart';
 import 'package:new_ecommerce_app/utils/helpers/helper_functions.dart';
 
@@ -53,9 +54,7 @@ class NavigationController extends GetxController {
   final screens = [
     const HomeScreen(),
     const StoreScreen(),
-    Container(
-      color: Colors.orange,
-    ),
+    const FavouriteScreen(),
     Container(
       color: Colors.blue,
     ),
