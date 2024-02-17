@@ -32,6 +32,8 @@ class TCircularContainer extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(radius),
         color: backgroundColor,
+        //border: Border.all(color: TColors.white)
+
       ),
       child: child,
     );

@@ -23,6 +23,7 @@ class OnBoardingNextButton extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           shape: const CircleBorder(),
           backgroundColor:dark?TColors.primary: Colors.black,
+          side:  const BorderSide(color: Colors.transparent),
         ),
         child: const Icon(Iconsax.arrow_right_3),
       ),
