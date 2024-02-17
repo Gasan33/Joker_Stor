@@ -7,7 +7,6 @@ import 'package:new_ecommerce_app/common/widgets/list_tile/settings_menu_tile.da
 import 'package:new_ecommerce_app/common/widgets/texts/section_header.dart';
 import 'package:new_ecommerce_app/features/personalization/screens/profile/profile.dart';
 import 'package:new_ecommerce_app/utils/constants/sizes.dart';
-
 import '../../../../common/widgets/list_tile/user_profile_tile.dart';
 import '../../../../utils/constants/colors.dart';
 
