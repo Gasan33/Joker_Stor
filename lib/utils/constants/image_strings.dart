@@ -29,6 +29,11 @@ class TImage{
 
   static const String user="assets/images/user/user.png";
 
+  // -- Product Reviews
+  static const String userProfileImage1="assets/images/reviews/user1.jpg";
+  static const String userProfileImage2="assets/images/reviews/user2.jpg";
+  static const String userProfileImage3="assets/images/reviews/user3.jpg";
+
   // -- Products
   static const String productImage1="assets/images/products/nike1.jpg";
   static const String productImage2="assets/images/products/nike2.jpg";
