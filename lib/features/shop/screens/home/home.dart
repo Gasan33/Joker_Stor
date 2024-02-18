@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:new_ecommerce_app/features/shop/screens/all_products/all_products.dart';
 import 'package:new_ecommerce_app/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:new_ecommerce_app/features/shop/screens/home/widgets/home_categories.dart';
 import 'package:new_ecommerce_app/features/shop/screens/home/widgets/promo_slider.dart';
@@ -16,7 +18,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -58,7 +60,9 @@ class HomeScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                   SizedBox(height: TSizes.spaceBtwSections,),
+                  SizedBox(
+                    height: TSizes.spaceBtwSections,
+                  ),
                 ],
               ),
             ),
@@ -78,7 +82,10 @@ class HomeScreen extends StatelessWidget {
                   ),
 
                   /// -- Heading
-                   TSectionHeading(title: 'Popular Products',onPressed: (){} ,),
+                  TSectionHeading(
+                    title: 'Popular Products',
+                    onPressed: () => Get.to(() => const AllProducts()),
+                  ),
                   const SizedBox(
                     height: TSizes.spaceBtwSections,
                   ),
@@ -86,9 +93,8 @@ class HomeScreen extends StatelessWidget {
                   /// -- Popular Products
                   TGridLayout(
                     itemCount: 4,
-                    itemBuilder:(_,index)=> const TProductCardVertical() ,
+                    itemBuilder: (_, index) => const TProductCardVertical(),
                   ),
-
                 ],
               ),
             ),
@@ -98,5 +104,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-
-
