@@ -27,6 +27,7 @@ class SuccessScreen extends StatelessWidget {
             children: [
               /// Image
               Lottie.asset(
+
                 image,
                 width: THelperFunctions.screenWidth() * 0.6,
               ),
