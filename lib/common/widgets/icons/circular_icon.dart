@@ -37,7 +37,7 @@ class TCircularIcon extends StatelessWidget {
             : TColors.white.withOpacity(0.9),
       ),
       child: IconButton(
-        onPressed: () {},
+        onPressed: onPressed,
         icon:  Icon(icon,color: color,size: size,),
       ),
     );
