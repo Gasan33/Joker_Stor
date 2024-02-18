@@ -133,7 +133,7 @@ class TProductCardVertical extends StatelessWidget {
                           child: Icon(
                             Iconsax.add,
                             color: TColors.white,
-                          ))),
+                          ),),),
                 ),
               ],
             ),
