@@ -27,6 +27,7 @@ class TImage{
   static const String promoBanner2="assets/images/banners/addidas.jpg";
   static const String promoBanner3="assets/images/banners/puma.jpg";
 
+  // -- Profile
   static const String user="assets/images/user/user.png";
 
   // -- Product Reviews
@@ -40,5 +41,15 @@ class TImage{
   static const String productImage3="assets/images/products/nike3.jpg";
   static const String productImage4="assets/images/products/nike4.jpg";
   static const String productImage5="assets/images/products/nike5.jpg";
+
+  // -- Payment Method
+  static const String applePay="assets/icons/payment_methods/applePay.png";
+  static const String googlePay="assets/icons/payment_methods/googlePay.png";
+  static const String visa="assets/icons/payment_methods/visa.png";
+  static const String masterCard="assets/icons/payment_methods/master.png";
+  static const String paypal="assets/icons/payment_methods/paypal.png";
+  static const String paytm="assets/icons/payment_methods/paytm.png";
+  static const String success="assets/icons/payment_methods/success.json";
+
 
 }
