@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "307354390878",
+    "project_id": "jokers-store",
+    "storage_bucket": "jokers-store.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:307354390878:android:1f7145633a3c9451babfcf",
+        "android_client_info": {
+          "package_name": "com.example.new_ecommerce_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "307354390878-m18rt0c3pv7ifi7nq4fi2mj8rjf7h166.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.new_ecommerce_app",
+            "certificate_hash": "ff5568af60217f57623ce6ce814284d38710fdb8"
+          }
+        },
+        {
+          "client_id": "307354390878-a8fegm60vapq9kjtk9grm6bjoqesj59a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCH_tgWPnihc74Gxyb7Je0bo1GwZSmORVU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "307354390878-a8fegm60vapq9kjtk9grm6bjoqesj59a.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "307354390878-e0m05vqt6hneak91mc5puk53v3ti4srp.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.newEcommerceApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
