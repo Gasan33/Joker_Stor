@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:new_ecommerce_app/bindings/general_bindings.dart';
 import 'package:new_ecommerce_app/utils/constants/colors.dart';
 import 'package:new_ecommerce_app/utils/theme/theme.dart';
 
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: TAppTheme.lightTheme,
       darkTheme: TAppTheme.darkTheme,
+      initialBinding:GeneralBindings() ,
       home: const Scaffold(backgroundColor: TColors.primary,body: Center(child: CircularProgressIndicator(color: TColors.white,),),),
     );
   }
