@@ -24,7 +24,9 @@ class AuthenticationRepository extends GetxController {
   /// Called from main.dart on app
   @override
   void onReady() {
+    // Remove the native splash screen
     FlutterNativeSplash.remove();
+    // Redirect to the appropriate screen
     screenRedirect();
   }
 
@@ -32,9 +34,12 @@ class AuthenticationRepository extends GetxController {
   screenRedirect() async {
     final user=_auth.currentUser;
     if (user != null) {
+      // If the user is logged in
       if (user.emailVerified) {
+        // if the user's email is verified. navigate to the main Navigation Menu
         Get.offAll(() => const NavigationMenu());
       } else {
+        // if the user's email is not verified. navigate to the Verify Email Screen
         Get.offAll(() => VerifyEmailScreen(
               email: _auth.currentUser?.email,
             ));
@@ -47,15 +52,34 @@ class AuthenticationRepository extends GetxController {
         print(deviceStorage.read("isFirstTime"));
       }
       deviceStorage.writeIfNull("isFirstTime", true);
+
+      // check if it's the first time launching the app
       deviceStorage.read("isFirstTime") != true
-          ? Get.offAll(() => const LoginScreen())
-          : Get.offAll(() => const OnBoardingScreen());
+          ? Get.offAll(() => const LoginScreen()) // Redirect to login screen if not the first time
+          : Get.offAll(() => const OnBoardingScreen()); // Redirect to onBoarding screen if it's the first time
     }
   }
 
   /* ------------------------------  Email & Password sing-in -------------------------------- */
 
-  /// [EmailAuthentication] - SingIn
+  /// [EmailAuthentication] - LOGIN
+  Future<UserCredential> loginWithEmailAndPassword(
+      String email, String password) async {
+    try {
+      return await _auth.signInWithEmailAndPassword(
+          email: email, password: password);
+    } on FirebaseAuthException catch (e) {
+      throw TFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw TFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw const TFormatException();
+    } on PlatformException catch (e) {
+      throw TPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong. Please try again';
+    }
+  }
 
   /// [EmailAuthentication] - REGISTER
   Future<UserCredential> registerWithEmailAndPassword(

@@ -17,6 +17,7 @@ class TImage{
 
   // -- Animation
   static const String productsIllustration="assets/images/animation/explore.json";
+  static const String loader="assets/images/animation/loader.json";
 
   // -- Category Icons
   static const String shoeIcon="assets/icons/categories/shoe.png";
@@ -52,6 +53,8 @@ class TImage{
   static const String masterCard="assets/icons/payment_methods/master.png";
   static const String paypal="assets/icons/payment_methods/paypal.png";
   static const String paytm="assets/icons/payment_methods/paytm.png";
+
+  // --
   static const String success="assets/icons/payment_methods/success.json";
 
 

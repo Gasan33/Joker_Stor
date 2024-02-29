@@ -33,7 +33,7 @@ class SignUpController extends GetxController {
     try {
       // Start Loading
       TFullScreenLoader.openLoadingDialog(
-          'We are processing your information...', TImage.success);
+          'We are processing your information...', TImage.loader);
 
       // CheckInternet Connectivity
       final isConnected = await NetworkManager.instance.isConnected();
@@ -46,7 +46,7 @@ class SignUpController extends GetxController {
 
       // Form Validation
       if (!signupFormKey.currentState!.validate()) {
-      //   TFullScreenLoader.stopLoading();
+      TFullScreenLoader.stopLoading();
       //
       // }else{
         return;
@@ -54,7 +54,7 @@ class SignUpController extends GetxController {
 
       // Privacy Policy Check
       if (!privacyPolicy.value) {
-        print("===========================************* yes");
+        //print("===========================************* yes");
         TLoaders.warningSnackBar(
           title: 'Accept Privacy Policy',
           message:
