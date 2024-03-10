@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:new_ecommerce_app/features/authentication/screens/login/login.dart';
 import 'package:new_ecommerce_app/features/authentication/screens/onboarding/onboarding.dart';
 import 'package:new_ecommerce_app/features/authentication/screens/singUp/verify_email.dart';
@@ -32,7 +33,7 @@ class AuthenticationRepository extends GetxController {
 
   /// Function to show Relevant screen
   screenRedirect() async {
-    final user=_auth.currentUser;
+    final user = _auth.currentUser;
     if (user != null) {
       // If the user is logged in
       if (user.emailVerified) {
@@ -55,8 +56,10 @@ class AuthenticationRepository extends GetxController {
 
       // check if it's the first time launching the app
       deviceStorage.read("isFirstTime") != true
-          ? Get.offAll(() => const LoginScreen()) // Redirect to login screen if not the first time
-          : Get.offAll(() => const OnBoardingScreen()); // Redirect to onBoarding screen if it's the first time
+          ? Get.offAll(() =>
+              const LoginScreen()) // Redirect to login screen if not the first time
+          : Get.offAll(() =>
+              const OnBoardingScreen()); // Redirect to onBoarding screen if it's the first time
     }
   }
 
@@ -124,27 +127,56 @@ class AuthenticationRepository extends GetxController {
 /* ------------------------------  Federated identity & social sing-in -------------------------------- */
 
   /// [GoogleAuthentication] - GOOGLE
+  Future<UserCredential> signInWithGoogle() async {
+    try {
+      // Trigger the authentication flow
+      final GoogleSignInAccount? userAccount = await GoogleSignIn().signIn();
+
+      // Obtain the auth details from the request
+      final GoogleSignInAuthentication? googleAuth =
+          await userAccount?.authentication;
+
+      // Create a new Credential
+      final credential = GoogleAuthProvider.credential(
+          accessToken: googleAuth?.accessToken, idToken: googleAuth?.idToken);
+
+      // Once signed in, return UserCredential
+      return _auth.signInWithCredential(credential);
+
+    } on FirebaseAuthException catch (e) {
+      throw TFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw TFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw const TFormatException();
+    } on PlatformException catch (e) {
+      throw TPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong. Please try again';
+    }
+  }
 
   /// [FacebookAuthentication] - FACEBOOK
 
 /* ------------------------------  ./end Federated identity & social sing-in -------------------------------- */
 
   /// [LogoutUser] - Valid for any authentication
- Future<void> logout()async{
-   try {
-     await FirebaseAuth.instance.signOut();
-     Get.offAll(()=> const LoginScreen());
-   } on FirebaseAuthException catch (e) {
-     throw TFirebaseAuthException(e.code).message;
-   } on FirebaseException catch (e) {
-     throw TFirebaseException(e.code).message;
-   } on FormatException catch (_) {
-     throw const TFormatException();
-   } on PlatformException catch (e) {
-     throw TPlatformException(e.code).message;
-   } catch (e) {
-     throw 'Something went wrong. Please try again';
-   }
+  Future<void> logout() async {
+    try {
+      await GoogleSignIn().signOut();
+      await FirebaseAuth.instance.signOut();
+      Get.offAll(() => const LoginScreen());
+    } on FirebaseAuthException catch (e) {
+      throw TFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw TFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw const TFormatException();
+    } on PlatformException catch (e) {
+      throw TPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong. Please try again';
+    }
   }
 
   /// DELETE USER - Remove user Auth and FireStore Account
