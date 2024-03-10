@@ -34,6 +34,7 @@ class AuthenticationRepository extends GetxController {
   /// Function to show Relevant screen
   screenRedirect() async {
     final user = _auth.currentUser;
+
     if (user != null) {
       // If the user is logged in
       if (user.emailVerified) {
@@ -120,14 +121,31 @@ class AuthenticationRepository extends GetxController {
     }
   }
 
+  /// [EmailAuthentication] - Forget Password
+  Future<void> sendPasswordResetEmail(String email) async {
+    try {
+      await _auth.sendPasswordResetEmail(email: email);
+    } on FirebaseAuthException catch (e) {
+      throw TFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw TFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw const TFormatException();
+    } on PlatformException catch (e) {
+      throw TPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong. Please try again';
+    }
+  }
+
   /// [ReAuthenticate] - ReAuthenticate User
 
-  /// [EmailAuthentication] - Forget Password
+
 
 /* ------------------------------  Federated identity & social sing-in -------------------------------- */
 
   /// [GoogleAuthentication] - GOOGLE
-  Future<UserCredential> signInWithGoogle() async {
+  Future<UserCredential?> signInWithGoogle() async {
     try {
       // Trigger the authentication flow
       final GoogleSignInAccount? userAccount = await GoogleSignIn().signIn();
@@ -152,7 +170,8 @@ class AuthenticationRepository extends GetxController {
     } on PlatformException catch (e) {
       throw TPlatformException(e.code).message;
     } catch (e) {
-      throw 'Something went wrong. Please try again';
+      if(kDebugMode) print("Something went wrong: $e");
+      return null;
     }
   }
 

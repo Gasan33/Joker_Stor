@@ -29,6 +29,7 @@ Future<void> main() async {
 
   TColors.linerGradient;
 
+  // Load all The Material Design / Theme / Localizations / Bindings
   runApp(const MyApp());
 }
 
