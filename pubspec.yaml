@@ -19,6 +19,7 @@ dependencies:
   logger: ^2.0.2+1
   url_launcher: ^6.2.4
   lottie: ^2.6.0
+  shimmer: ^3.0.0
   connectivity_plus: ^5.0.2
   flutter_native_splash: ^2.3.2
   smooth_page_indicator: ^1.1.0
